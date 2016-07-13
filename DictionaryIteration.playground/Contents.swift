@@ -18,7 +18,7 @@
  */
 // write your code here
 
-
+var bandsAndAlbum = ["Nirvana" : "Nevermind", "Blondie" : "Parallel Lines", "The Kinks" : "Low Budget", "The Beatles" : "Sgt. Pepper's Lonely Hearts Club Band"]
 
 
 /*: question2
@@ -27,14 +27,14 @@
 // write your code here
 
 
-
+bandsAndAlbum["Pixies"] = "Doolittle"
 
 /*: question3
  ### 3. We don't care that much about The Kinks. Delete them from the dictionary you created in Question 1.
  */
 // write your code here
 
-
+bandsAndAlbum.removeValueForKey("The Kinks")
 
 
 
@@ -44,6 +44,8 @@
 let bandName = "Nirvana"
 // write your code here
 
+print("\(bandName)'s top-selling album was \(bandsAndAlbum[bandName])")
+
 
 
 
@@ -51,14 +53,17 @@ let bandName = "Nirvana"
  ### 5. Iterate over the dictionary you created in Question 1 and print "<Band>'s top-selling album was <Album>" for each item in the dictionary.
  */
 // write your code here
-
+for (band, album) in bandsAndAlbum
+{
+    print("\(bandsAndAlbum[band])'s top-selling album was \(bandsAndAlbum[album])")
+}
 
 
 
 /*: question6
  ### 6. What type of data structure is returned when you iterate over a dictionary?
  */
-
+//a tuple
 
 
 
@@ -79,7 +84,10 @@ let bandName = "Nirvana"
  */
 // write your code here
 
-
+let examScores = [9 : "B",
+                 10 : "A",
+                 11 : "C",
+                 12 : "B"]
 
 
 /*: question9
@@ -87,7 +95,10 @@ let bandName = "Nirvana"
  */
 // write your code here
 
-
+for (grade, score) in examScores
+{
+    print("\(grade) got \(score)")
+}
 
 
 /*: question10
@@ -95,7 +106,29 @@ let bandName = "Nirvana"
  */
 // write your code here
 
+var grades = Array(examScores.values)
+var highestGrade = grades.sort().first
 
+
+for (key, value) in examScores
+{
+    if (value == highestGrade)
+    {
+        if let highestGrade = highestGrade
+        {
+            print("Grade \(key) got the highest score with \(highestGrade)!")
+        }
+        else
+        {
+            print("Everyone failed")
+        }
+    }
+    
+}
+
+print("The highest grade is \(highestGrade)")
+
+print(grades)
 
 
 /*:
